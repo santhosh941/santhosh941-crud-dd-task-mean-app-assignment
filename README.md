@@ -128,7 +128,7 @@ docker compose up -d
 
 Application accessible at:
 
-http://<EC2_PUBLIC_IP>
+http://54.227.92.152
 🔄 CI/CD Pipeline – GitHub Actions
 
 Workflow file:
@@ -193,7 +193,7 @@ http://localhost
 
 or
 
-http://<EC2_PUBLIC_IP>
+http://54.227.92.152
 ✅ Assignment Completion Checklist
 
 ✔ Repository Setup
