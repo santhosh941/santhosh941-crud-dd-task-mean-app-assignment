@@ -99,10 +99,6 @@ docker compose up --build
 
 Access via:
 
-http://localhost
-
-
-
 🌐 Nginx Reverse Proxy
 
 Configured inside:
@@ -138,7 +134,7 @@ docker compose up -d
 
 Application accessible at:
 
-http://54.227.92.152
+http://44.207.177.53 
 
 
 
