@@ -213,12 +213,9 @@ All sensitive credentials are securely stored as GitHub repository secrets.
 🧪 How to Run the Application
 Using Docker Compose
 docker compose up -d
+
 Access Application
-http://localhost
-
-or
-
-http://54.227.92.152
+static ip : http://44.207.177.53 
 
 
 ✅ Assignment Completion Checklist
