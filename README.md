@@ -18,6 +18,8 @@ Backend → MongoDB
 
 The application is accessible publicly via EC2 on Port 80.
 
+
+
 🛠️ Technologies Used
 
 Angular
@@ -37,6 +39,8 @@ GitHub Actions
 AWS EC2 (Ubuntu)
 
 Nginx Reverse Proxy
+
+
 
 📁 Repository Structure
 .
@@ -61,6 +65,9 @@ Nginx Reverse Proxy
 └── .github/
     └── workflows/
         └── docker.yml
+
+
+        
 🐳 Docker Configuration
 Backend
 
@@ -93,6 +100,9 @@ docker compose up --build
 Access via:
 
 http://localhost
+
+
+
 🌐 Nginx Reverse Proxy
 
 Configured inside:
@@ -129,6 +139,10 @@ docker compose up -d
 Application accessible at:
 
 http://54.227.92.152
+
+
+
+
 🔄 CI/CD Pipeline – GitHub Actions
 
 Workflow file:
@@ -162,6 +176,9 @@ Stop running containers
 
 Restart containers using docker compose
 
+
+
+
 🔐 GitHub Secrets Used
 
 DOCKERHUB_USERNAME
@@ -176,6 +193,8 @@ EC2_SSH_KEY
 
 All sensitive credentials are securely stored as GitHub repository secrets.
 
+
+
 📸 Screenshots
 ✅ GitHub Actions Successful Run
 
@@ -184,6 +203,8 @@ All sensitive credentials are securely stored as GitHub repository secrets.
 ✅ Running Containers in EC2
 
 ✅ Application Running in Browser
+
+
 
 🧪 How to Run the Application
 Using Docker Compose
@@ -194,6 +215,8 @@ http://localhost
 or
 
 http://54.227.92.152
+
+
 ✅ Assignment Completion Checklist
 
 ✔ Repository Setup
@@ -217,6 +240,8 @@ http://54.227.92.152
 ✔ Nginx Reverse Proxy
 
 ✔ Documentation & Screenshots
+
+
 
 🎯 Conclusion
 
