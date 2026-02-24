@@ -1,27 +1,237 @@
-In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication.  
+Full Stack MEAN Application – DevOps Assignment
+📌 Project Overview
 
-The application will manage a collection of tutorials, where each tutorial includes an ID, title, description, and published status. Users will be able to create, retrieve, update, and delete tutorials. Additionally, a search box will allow users to find tutorials by title.
+This project demonstrates the containerization, CI/CD automation, and deployment of a full-stack MEAN (MongoDB, Express, Angular, Node.js) application using modern DevOps practices.
 
-## Project setup
+The application supports CRUD operations for managing tutorials and is fully deployed using Docker and automated via GitHub Actions CI/CD pipeline on AWS EC2.
 
-### Node.js Server
+🏗️ Architecture Overview
+Flow:
 
-cd backend
+User → Nginx (Port 80) →
 
-npm install
+/ → Angular Frontend
 
-You can update the MongoDB credentials by modifying the `db.config.js` file located in `app/config/`.
+/api → Node.js Backend
 
-Run `node server.js`
+Backend → MongoDB
 
-### Angular Client
+The application is accessible publicly via EC2 on Port 80.
 
-cd frontend
+🛠️ Technologies Used
 
-npm install
+Angular
 
-Run `ng serve --port 8081`
+Node.js
 
-You can modify the `src/app/services/tutorial.service.ts` file to adjust how the frontend interacts with the backend.
+Express
 
-Navigate to `http://localhost:8081/`
+MongoDB
+
+Docker
+
+Docker Compose
+
+GitHub Actions
+
+AWS EC2 (Ubuntu)
+
+Nginx Reverse Proxy
+
+📁 Repository Structure
+.
+├── backend/
+│   ├── Dockerfile
+│   ├── package.json
+│   └── ...
+│
+├── frontend/
+│   ├── Dockerfile
+│   ├── nginx.conf
+│   └── ...
+│
+├── docker-compose.yml
+├── README.md
+├── docs/
+│   ├── github-actions-success.png
+│   ├── dockerhub-images.png
+│   ├── ec2-containers.png
+│   ├── application-ui.png
+│
+└── .github/
+    └── workflows/
+        └── docker.yml
+🐳 Docker Configuration
+Backend
+
+Built using Node base image
+
+Exposes port 8080
+
+Connects to MongoDB container
+
+Frontend
+
+Angular app built inside container
+
+Served using Nginx
+
+Reverse proxy configured for /api
+
+Docker Compose Services
+
+mongodb
+
+backend
+
+frontend (nginx reverse proxy)
+
+To run locally:
+
+docker compose up --build
+
+Access via:
+
+http://localhost
+🌐 Nginx Reverse Proxy
+
+Configured inside:
+
+frontend/nginx.conf
+
+Proxy configuration:
+
+location /api/ {
+    proxy_pass http://backend:8080;
+}
+
+This ensures:
+
+Angular frontend served at /
+
+Backend APIs routed via /api
+
+Entire app accessible on Port 80
+
+☁️ EC2 Deployment
+Steps Performed:
+
+Created Ubuntu EC2 instance
+
+Installed Docker & Docker Compose
+
+Cloned repository
+
+Deployed using:
+
+docker compose up -d
+
+Application accessible at:
+
+http://<EC2_PUBLIC_IP>
+🔄 CI/CD Pipeline – GitHub Actions
+
+Workflow file:
+
+.github/workflows/docker.yml
+Trigger
+
+Push to main branch
+
+CI Process
+
+Checkout repository
+
+Login to DockerHub
+
+Build backend image
+
+Push backend image
+
+Build frontend image
+
+Push frontend image
+
+CD Process
+
+SSH into EC2
+
+Pull latest Docker images
+
+Stop running containers
+
+Restart containers using docker compose
+
+🔐 GitHub Secrets Used
+
+DOCKERHUB_USERNAME
+
+DOCKERHUB_TOKEN
+
+EC2_HOST
+
+EC2_USER
+
+EC2_SSH_KEY
+
+All sensitive credentials are securely stored as GitHub repository secrets.
+
+📸 Screenshots
+✅ GitHub Actions Successful Run
+
+✅ DockerHub Images
+
+✅ Running Containers in EC2
+
+✅ Application Running in Browser
+
+🧪 How to Run the Application
+Using Docker Compose
+docker compose up -d
+Access Application
+http://localhost
+
+or
+
+http://<EC2_PUBLIC_IP>
+✅ Assignment Completion Checklist
+
+✔ Repository Setup
+
+✔ Backend Dockerfile
+
+✔ Frontend Dockerfile
+
+✔ MongoDB Setup
+
+✔ Docker Compose Configuration
+
+✔ EC2 Deployment
+
+✔ GitHub Actions CI/CD
+
+✔ Automated Docker Image Push
+
+✔ Automated EC2 Deployment
+
+✔ Nginx Reverse Proxy
+
+✔ Documentation & Screenshots
+
+🎯 Conclusion
+
+This project demonstrates a complete DevOps workflow including:
+
+Containerization
+
+Image management
+
+CI automation
+
+CD automation
+
+Infrastructure deployment
+
+Reverse proxy configuration
+
+The full-stack MEAN application is successfully deployed with automated CI/CD pipeline using GitHub Actions and Docker on AWS EC2.
