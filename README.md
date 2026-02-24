@@ -196,18 +196,21 @@ All sensitive credentials are securely stored as GitHub repository secrets.
 
 
 📸 Screenshots
+
 ✅ GitHub Actions Successful Run
-![Github Actions](docs/github-actions-sucess.png)
+![github actions](docs/github-actions-sucess.png.png)
+
+✅ DockerHub repo
+![Dockerhub repo](docs/Dockerhub_repository.png.png)
 
 ✅ DockerHub Images
-![Dockerhub repo](docs/Dockerhub_repository.png.png)
 ![Docker Image build](docs/Docker_build_image.png)
 
 ✅ Running Containers in EC2
 ![running_container](docs/Running_container.png)
 
 ✅ Application Running in Browser
-![Application_running_ui](docs/Application_running.png)
+![Application_running_ui](docs/Application_running_ui.png)
 
 
 
