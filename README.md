@@ -1,5 +1,5 @@
 Full Stack MEAN Application – DevOps Assignment
-📌 Project Overview
+📌Project Overview
 
 This project demonstrates the containerization, CI/CD automation, and deployment of a full-stack MEAN (MongoDB, Express, Angular, Node.js) application using modern DevOps practices.
 
